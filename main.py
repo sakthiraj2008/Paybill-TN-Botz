@@ -23,13 +23,6 @@ async def help_cmd(client, message):
      print("Help Command") 
 
 
-print("Bot Was Started") 
-
-TnBotz.run() 
-
-
-
-
 Print("Bot Was Started") 
 
 TnBotz.run() 
