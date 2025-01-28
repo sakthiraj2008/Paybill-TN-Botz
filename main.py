@@ -13,6 +13,23 @@ TnBotz = Cilent(
 ) 
 
 
+@TNBotz.on_message(filters.command("start")) 
+async def start_cmd(client, message):
+     print("START Command"):
+
+
+@TnBotz.on_message(filters.command("help")) 
+async def help_cmd(client, message):
+     print("Help Command") 
+
+
+print("Bot Was Started") 
+
+TnBotz.run() 
+
+
+
+
 Print("Bot Was Started") 
 
 TnBotz.run() 
