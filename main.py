@@ -1,9 +1,9 @@
 from pyrogram import Client, filters
 
 
-API_ID = ""
-API_HASH = ""
-BOT_TOKEN = ""
+API_ID = "11472991"
+API_HASH = "c78c50d54baf2173e8b3f75c359c0c72"
+BOT_TOKEN = "7849658420:AAFtkZoP-knEMgquZQuMnKbGdd7tOQwrS1A"
 
 TnBotz = Cilent(
      name="Payment_TN_Bot", 
