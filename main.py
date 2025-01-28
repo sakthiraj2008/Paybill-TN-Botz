@@ -15,4 +15,4 @@ TnBotz = Cilent(
 
 Print("Bot Was Started") 
 
-TnBotz.run
+TnBotz.run() 
