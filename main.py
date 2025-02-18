@@ -1,30 +1,28 @@
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeybordMarkup, InlineKeybordButton
+import telebot
+from telebot import types
 
-API_ID = "11472991"
-API_HASH = "c78c50d54baf2173e8b3f75c359c0c72"
-BOT_TOKEN = "7653029123:AAGZT26o00FphPZloCohvv-QI5-jFKIMBH4"
+bot = telebot.Telebot('7653029123:AAGZT26o00FphPZloCohvv-QI5-jFKIMBH4')
 
-TnBotz = Cilent(
-     name="PayBill_UPI_Bot", 
-     api_id=API_ID, 
-     api_hash=API_HASH, 
-     bot_token=BOT_TOKEN
-) 
+@bot.messsage_handler(command=['quiz'])
+def qustion(message):
+     markup = types.InlineKeybordMarkup(row_width=2)
 
-
-START_BUTTONS = [[
-  InlineKeybordButtons("Update Channel",url="https://t.me/tn_botz")
-]]
+     iron = types.InlineKeybordButton('1 kilo of iron',callback_data=''answeer_text1)
+     catton = types.InlineKeybordButton('1 kilo of iron',callback_data=''answeer_text1)
+     same = types.InlineKeybordButton('1 kilo of iron',callback_data=''answeer_text1)
+     no_answer = types.InlineKeybordButton('1 kilo of iron',callback_data=''answeer_text1)
 
 
+     markup.add(iron,catton,same,no_answer)
+     
+     bot.send_messahe(message.chat.id,'what is lighter?', relay_markup=markup)
 
-@TnBotz.on_message(filters.command("start")) 
-async def start_cmd(client, message):
-     await meaasge.replay_text(
-          text=="you have to join my channel to use me",
-          replay_markup=InlineKeybordMarkup(START_BUTTONS)
-     )
-Print("Bot Was Started") 
+@bot.callback_query_handlers(func=lambda call:true)
+def answer(callback):
+     if callback.message:
+          if callback.data == 'answer_same':
+               bot.send_message(callback.message.chat.id,'congroulation')
+          else:
+               bot.send_message(callback.message.chat.id,'think again')
 
-TnBotz.run() 
+bto.polling()
